@@ -1,7 +1,8 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import FacilityCard from '@/components/FacilityCard';
+import SearchFacilities from '@/components/SearchFacilities';
+import DateTimePicker from '@/components/DateTimePicker';
 
 const facilities = [
   {
@@ -49,9 +50,22 @@ const facilities = [
 ];
 
 const Index = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedDate, setSelectedDate] = useState<Date>();
+  const [selectedTime, setSelectedTime] = useState<string>();
+
+  const filteredFacilities = facilities.filter((facility) =>
+    facility.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    facility.location.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const handleFacilityClick = (facilityId: number) => {
-    // Will implement booking functionality in the next iteration
-    console.log("Selected facility:", facilityId);
+    if (!selectedDate || !selectedTime) {
+      console.log("Please select both date and time");
+      return;
+    }
+    // Will implement booking functionality after Supabase integration
+    console.log("Selected facility:", facilityId, "Date:", selectedDate, "Time:", selectedTime);
   };
 
   return (
@@ -75,11 +89,22 @@ const Index = () => {
         </div>
       </div>
 
+      {/* Search and DateTimePicker Section */}
+      <div className="container mx-auto py-8 px-4">
+        <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between mb-8">
+          <SearchFacilities onSearch={setSearchQuery} />
+          <DateTimePicker
+            onDateChange={setSelectedDate}
+            onTimeChange={setSelectedTime}
+          />
+        </div>
+      </div>
+
       {/* Facilities Section */}
-      <div className="container mx-auto py-16 px-4">
+      <div className="container mx-auto py-8 px-4">
         <h2 className="text-3xl font-bold text-center mb-12">Our Facilities</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {facilities.map((facility) => (
+          {filteredFacilities.map((facility) => (
             <FacilityCard
               key={facility.id}
               name={facility.name}
