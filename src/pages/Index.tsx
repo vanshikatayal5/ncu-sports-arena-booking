@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import FacilityCard from '@/components/FacilityCard';
 import SearchFacilities from '@/components/SearchFacilities';
 import DateTimePicker from '@/components/DateTimePicker';
+import SlotAvailabilityDialog from '@/components/SlotAvailabilityDialog';
 
 const facilities = [
   {
@@ -53,6 +54,8 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDate, setSelectedDate] = useState<Date>();
   const [selectedTime, setSelectedTime] = useState<string>();
+  const [selectedFacility, setSelectedFacility] = useState<string>('');
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const filteredFacilities = facilities.filter((facility) =>
     facility.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -60,12 +63,11 @@ const Index = () => {
   );
 
   const handleFacilityClick = (facilityId: number) => {
-    if (!selectedDate || !selectedTime) {
-      console.log("Please select both date and time");
-      return;
+    const facility = facilities.find(f => f.id === facilityId);
+    if (facility) {
+      setSelectedFacility(facility.name);
+      setIsDialogOpen(true);
     }
-    // Will implement booking functionality after Supabase integration
-    console.log("Selected facility:", facilityId, "Date:", selectedDate, "Time:", selectedTime);
   };
 
   return (
@@ -116,6 +118,14 @@ const Index = () => {
           ))}
         </div>
       </div>
+
+      <SlotAvailabilityDialog
+        isOpen={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+        facilityName={selectedFacility}
+        selectedDate={selectedDate}
+        onDateSelect={setSelectedDate}
+      />
     </div>
   );
 };
