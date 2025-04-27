@@ -12,42 +12,42 @@ const facilities = [
     name: "Main Ground",
     description: "Spacious ground for multiple sports activities",
     location: "Central Campus",
-    image: "https://images.unsplash.com/photo-1589487391730-58f20eb2c308?q=80&w=2674&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1579952363873-f5635e5fff5f?q=80&w=2835&auto=format&fit=crop", // Updated sports field image
   },
   {
     id: 2,
     name: "Basketball Court",
     description: "Professional basketball court with spectator seating",
     location: "Sports Complex",
-    image: "https://images.unsplash.com/photo-1544919982-b61976f0ba43?q=80&w=2676&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2670&auto=format&fit=crop", // Professional basketball court
   },
   {
     id: 3,
     name: "Volleyball Area",
     description: "Dedicated volleyball courts with sand flooring",
     location: "Sports Complex",
-    image: "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=2607&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1626224103046-337c2ca0da10?q=80&w=2670&auto=format&fit=crop", // Modern volleyball court
   },
   {
     id: 4,
     name: "Badminton Area",
     description: "Indoor badminton courts with proper lighting",
     location: "Indoor Sports Hall",
-    image: "https://images.unsplash.com/photo-1617516202907-ff95055b5no9?q=80&w=2676&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1636487658591-95685dd3e64b?q=80&w=2670&auto=format&fit=crop", // Indoor badminton court
   },
   {
     id: 5,
     name: "Lawn Tennis Area",
     description: "Professional tennis courts with synthetic surface",
     location: "Sports Complex",
-    image: "https://images.unsplash.com/photo-1595435742656-5272d0b3fc72?q=80&w=2674&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1622205681796-4f320cd0fb5b?q=80&w=2670&auto=format&fit=crop", // Professional tennis court
   },
   {
     id: 6,
     name: "Amphitheatre",
     description: "Multi-purpose outdoor venue for events",
     location: "Central Campus",
-    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2598&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1602070450027-c8cc16c26953?q=80&w=2874&auto=format&fit=crop", // Large amphitheatre with grand stairs
   },
 ];
 
