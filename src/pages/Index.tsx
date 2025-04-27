@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import FacilityCard from '@/components/FacilityCard';
@@ -71,19 +72,19 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
       {/* Hero Section */}
-      <div className="bg-primary py-16 px-4">
+      <div className="bg-gradient-to-r from-sky-600 to-blue-700 py-20 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in">
             SportifyNCU
           </h1>
-          <p className="text-xl text-white/90 mb-8">
+          <p className="text-xl text-white/90 mb-8 animate-fade-in">
             Book your favorite sports facilities at NCU
           </p>
           <Button
             size="lg"
-            className="bg-white text-primary hover:bg-gray-100"
+            className="bg-white text-primary hover:bg-gray-100 transition-all duration-300 animate-fade-in shadow-lg hover:shadow-xl"
             onClick={() => window.scrollTo({ top: 800, behavior: 'smooth' })}
           >
             Book Now
@@ -92,20 +93,22 @@ const Index = () => {
       </div>
 
       {/* Search and DateTimePicker Section */}
-      <div className="container mx-auto py-8 px-4">
-        <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between mb-8">
-          <SearchFacilities onSearch={setSearchQuery} />
-          <DateTimePicker
-            onDateChange={setSelectedDate}
-            onTimeChange={setSelectedTime}
-          />
+      <div className="container mx-auto py-12 px-4">
+        <div className="bg-white rounded-xl shadow-lg p-6 mb-12">
+          <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+            <SearchFacilities onSearch={setSearchQuery} />
+            <DateTimePicker
+              onDateChange={setSelectedDate}
+              onTimeChange={setSelectedTime}
+            />
+          </div>
         </div>
-      </div>
 
-      {/* Facilities Section */}
-      <div className="container mx-auto py-8 px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Facilities</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Facilities Section */}
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          Our Facilities
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {filteredFacilities.map((facility) => (
             <FacilityCard
               key={facility.id}
