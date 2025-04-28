@@ -33,7 +33,7 @@ const facilities = [
     name: "Badminton Area",
     description: "Indoor badminton courts with proper lighting",
     location: "Indoor Sports Hall",
-    image: "https://turftown.in/wp-content/uploads/2023/09/Untitled-design-5-min.jpg", 
+    image: "https://images.unsplash.com/photo-1636487658591-95685dd3e64b?q=80&w=2670&auto=format&fit=crophttps://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=2014&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Indoor badminton court
   },
   {
     id: 5,
