@@ -1,30 +1,31 @@
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Login from "./pages/Login";
-import Facilities from "./pages/Facilities";
-import NotFound from "./pages/NotFound";
+import { useState } from "react";
+import LoginPage from "./pages/LoginPage";
+import WelcomePage from "./pages/WelcomePage";
+import BookingPage from "./pages/BookingPage";
+import ChatRoom from "./pages/ChatRoom";
 
-const queryClient = new QueryClient();
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [page, setPage] = useState<"welcome" | "booking" | "chat">("welcome");
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/facilities" element={<Facilities />} />
-          <Route path="/" element={<Navigate to="/login" replace />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+  if (!isLoggedIn) {
+    return <LoginPage onLogin={() => setIsLoggedIn(true)} />;
+  }
+
+  if (page === "welcome") {
+    return <WelcomePage onStartBooking={() => setPage("booking")} onStartChat={() => setPage("chat")} />;
+  }
+
+  if (page === "chat") {
+    return <ChatRoom onBack={() => setPage("welcome")} />;
+  }
+
+  if (page === "booking") {
+    return <BookingPage />;
+  }
+
+  return null;
+}
 
 export default App;
