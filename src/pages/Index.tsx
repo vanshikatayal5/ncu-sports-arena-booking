@@ -26,7 +26,7 @@ const facilities = [
     name: "Volleyball Area",
     description: "Dedicated volleyball courts with sand flooring",
     location: "Sports Complex",
-    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.volleyballusa.com%2Findoor-court-construction%2F&psig=AOvVaw3Dli7EuBBg5lvR4ZY6jwEG&ust=1745906457901000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNCWzsSG-owDFQAAAAAdAAAAABAE", // Modern volleyball court
+    image: "https://unsplash.com/photos/silhouette-of-people-playing-basketball-during-sunset-0NaQQsLWLkA", // Modern volleyball court
   },
   {
     id: 4,
