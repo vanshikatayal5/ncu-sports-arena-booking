@@ -12,42 +12,42 @@ const facilities = [
     name: "Main Ground",
     description: "Spacious ground for multiple sports activities",
     location: "Central Campus",
-    image: "https://cricketgraph.com/wp-content/uploads/2022/12/The-Ballpark-Cricket-Ground-Aerial-Fantasy-Cricket-Tips.png", 
+    image: "https://images.unsplash.com/photo-1579952363873-f5635e5fff5f?q=80&w=2835&auto=format&fit=crop", // Updated sports field image
   },
   {
     id: 2,
     name: "Basketball Court",
     description: "Professional basketball court with spectator seating",
     location: "Sports Complex",
-    image: "https://www.ncuindia.edu/wp-content/uploads/2022/07/b-ball.jpg", 
+    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2670&auto=format&fit=crop", // Professional basketball court
   },
   {
     id: 3,
     name: "Volleyball Area",
     description: "Dedicated volleyball courts with sand flooring",
     location: "Sports Complex",
-    image: "https://www.volleyballusa.com/wp-content/uploads/2010/01/High-School-Volleyball-Court-System-1080x675.png", 
+    image: "https://images.unsplash.com/photo-1626224103046-337c2ca0da10?q=80&w=2670&auto=format&fit=crop", // Modern volleyball court
   },
   {
     id: 4,
     name: "Badminton Area",
     description: "Indoor badminton courts with proper lighting",
     location: "Indoor Sports Hall",
-    image: "https://images.unsplash.com/photo-1636487658591-95685dd3e64b?q=80&w=2670&auto=format&fit=crophttps://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=2014&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Indoor badminton court
+    image: "https://images.unsplash.com/photo-1636487658591-95685dd3e64b?q=80&w=2670&auto=format&fit=crop", // Indoor badminton court
   },
   {
     id: 5,
     name: "Lawn Tennis Area",
     description: "Professional tennis courts with synthetic surface",
     location: "Sports Complex",
-    image: "https://tigerturf.com/in/wp-content/uploads/sites/15/2022/01/Synthetic-Grass-Tennis-Court3.jpg", 
+    image: "https://images.unsplash.com/photo-1622205681796-4f320cd0fb5b?q=80&w=2670&auto=format&fit=crop", // Professional tennis court
   },
   {
     id: 6,
     name: "Amphitheatre",
     description: "Multi-purpose outdoor venue for events",
     location: "Central Campus",
-    image: "https://www.ncuindia.edu/wp-content/uploads/2022/06/Amphitheatre.jpg", 
+    image: "https://images.unsplash.com/photo-1602070450027-c8cc16c26953?q=80&w=2874&auto=format&fit=crop", // Large amphitheatre with grand stairs
   },
 ];
 
