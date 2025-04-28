@@ -1,8 +1,8 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MapPin, Calendar } from "lucide-react";
+import { MapPin, Calendar, Image as ImageIcon } from "lucide-react";
 
 interface FacilityCardProps {
   name: string;
@@ -13,15 +13,29 @@ interface FacilityCardProps {
 }
 
 const FacilityCard = ({ name, description, location, image, onClick }: FacilityCardProps) => {
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
   return (
     <Card className="overflow-hidden group transition-all duration-300 hover:shadow-lg">
       <CardHeader className="p-0">
         <div className="relative h-48 overflow-hidden">
-          <img 
-            src={image} 
-            alt={name} 
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
-          />
+          {!imageError ? (
+            <img 
+              src={image} 
+              alt={name} 
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              onError={handleImageError}
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center bg-gray-100">
+              <ImageIcon className="h-16 w-16 text-gray-400" />
+              <span className="ml-2 text-gray-500">Image unavailable</span>
+            </div>
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
         <div className="p-6">
